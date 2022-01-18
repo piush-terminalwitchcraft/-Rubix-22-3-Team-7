@@ -22,7 +22,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.krishana.androidhackathontemplates.fragments.HomeFragment
-import com.krishana.androidhackathontemplates.fragments.MessageFragment
 import com.krishana.androidhackathontemplates.fragments.*
 
 class MainActivity : AppCompatActivity(){

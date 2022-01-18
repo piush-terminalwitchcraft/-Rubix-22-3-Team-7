@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundcolor"
-    tools:context=".fragments.MessageFragment">
+    tools:context=".FireBaseActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constlay_rectangle_Big"
@@ -20,17 +20,15 @@
 
 
         <EditText
-            android:id="@+id/add_item_edit_text"
+            android:id="@+id/foodItem"
             android:layout_height="wrap_content"
             android:layout_width="180dp"
             android:layout_gravity="center"
             android:layout_marginTop="60dp"
-            android:background="@null"
             android:fontFamily="@font/poppins_light"
             android:hint="Add item"
             android:textStyle="bold"
             android:minHeight="48dp"
-            android:text="@null"
             android:textAlignment="center"
             android:textColor="@color/textcolor_editscreen_attributes"
             android:textSize="26sp"
@@ -79,14 +77,13 @@
             app:srcCompat="@drawable/ic_baseline_calendar" />
 
         <TextView
-            android:id="@+id/textview_date"
+            android:id="@+id/expiryDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="110dp"
             android:layout_marginEnd="64dp"
             android:fontFamily="@font/poppins_light"
             android:hint="16/04/2022"
-            android:text=""
             android:textStyle="bold"
             android:textColor="@color/textcolor_editscreen_attributes"
             android:textSize="18sp"
@@ -154,7 +151,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <AutoCompleteTextView
-                android:id="@+id/textfield_category"
+                android:id="@+id/editTextCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_weight="1"
@@ -162,37 +159,19 @@
                 android:text="Select Category"
                 android:textColor="@color/textcolor_editscreen_attributes"
                 android:textSize="18sp"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:inputType="none"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="188dp"
-        android:fontFamily="@font/poppins_light"
 
-        android:text="Cancel"
-        android:textColor="@color/Cancelsavecolor"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_save"
-        app:layout_constraintEnd_toStartOf="@+id/textView_save"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_save"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
+    <Button
         android:id="@+id/textView_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:enabled="false"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="343dp"
         android:fontFamily="@font/poppins_light"
         android:text="Save"
         android:textColor="#5D1BAACA"
@@ -200,10 +179,11 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView_cancel" />
-
-
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constlay_rectangle_Day"
+        app:layout_constraintVertical_bias="0.0"
+        android:gravity="center"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

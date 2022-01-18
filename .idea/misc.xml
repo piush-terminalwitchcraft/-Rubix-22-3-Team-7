@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/item_background.xml" value="0.14814814814814814" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/item_background_near_expiry.xml" value="0.1125" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/item_background_on_expiry.xml" value="0.12" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_fire_base.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/items.xml" value="0.15767634854771784" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

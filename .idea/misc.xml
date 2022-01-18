@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable-v24/circleorange.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable-v24/home_fragment_card_edge.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/dotted.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/dotted_vertical.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/editsccreenbackground.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/ic_baseline_calendar.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_widgets_recycler_view.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/fragment_message.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/home_fragment_recipes_story.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/items.xml" value="0.16666666666666666" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

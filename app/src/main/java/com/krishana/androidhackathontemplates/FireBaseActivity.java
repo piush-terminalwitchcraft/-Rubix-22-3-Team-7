@@ -47,7 +47,7 @@ public class FireBaseActivity extends AppCompatActivity implements DatePickerDia
         setContentView(R.layout.adding_page);
 
         editTextCategory = findViewById(R.id.editTextCategory);
-        String[] days = new String[]{"meat","fruits"};
+        String[] days = new String[]{"meat","fruits","dairy","leftovers","drinks","vegetables"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,R.layout.dropdown,days);
         editTextCategory.setAdapter(adapter);
 

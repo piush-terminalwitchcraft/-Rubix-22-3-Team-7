@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
         <entry key="..\:/Users/Yash/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_fire_base.xml" value="0.22" />
         <entry key="..\:/Users/Yash/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_recycler_view.xml" value="0.1578125" />
         <entry key="..\:/Users/Yash/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/adding_page.xml" value="0.22" />
@@ -12,12 +11,14 @@
         <entry key="..\:/Users/Yash/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/fragment_home.xml" value="0.1578125" />
         <entry key="..\:/Users/Yash/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/fragment_message.xml" value="0.1578125" />
         <entry key="..\:/Users/Yash/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/items.xml" value="0.1578125" />
-
         <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/item_background.xml" value="0.14814814814814814" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/item_background_near_expiry.xml" value="0.1125" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/item_background_on_expiry.xml" value="0.12" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_fire_base.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_recycler_view.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/home_fragment_recipes_story.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/items.xml" value="0.15767634854771784" />
       </map>
     </option>

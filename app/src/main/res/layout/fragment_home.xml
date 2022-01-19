@@ -92,7 +92,6 @@
             android:background="@drawable/editsccreenbackground"
             android:drawableStart="@drawable/ic_baseline_search_24"
             android:drawablePadding="10dp"
-            android:ems="10"
 
             android:hint="Search your favourite recipe "
             android:inputType="textPersonName"

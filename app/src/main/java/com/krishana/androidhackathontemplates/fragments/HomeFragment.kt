@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -28,6 +29,7 @@ import java.lang.Math.abs
 class HomeFragment : Fragment() {
     private lateinit var list : ArrayList<recipeModel>
     private lateinit var adapter : recipeAdapter
+    private lateinit var editText: EditText
     private lateinit var viewPagerImgSlider: ViewPager2
     private lateinit var sliderHandle: Handler
     private lateinit var sliderRun :Runnable
@@ -37,8 +39,12 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+        editText = view.findViewById(R.id.editTextTextPersonName)
         viewPagerImgSlider = view.findViewById(R.id.viewPagerImgSlider)
         loadrecyclerviewData()
+        editText.setOnClickListener{
+            Toast.makeText(requireContext(),"edittext clicked", Toast.LENGTH_SHORT).show()
+        }
 
 
         return view

@@ -195,4 +195,11 @@ class MainActivity : AppCompatActivity(){
         })
 
     }
+
+    fun widgetSelector(view: View) {
+        val choice = view.tag.toString()
+        val intent = Intent(this, WidgetsRecyclerView::class.java)
+        intent.putExtra("tag", choice)
+        startActivity(intent)
+    }
 }

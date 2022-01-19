@@ -219,6 +219,8 @@
                                             app:cardElevation="50dp">
 
                                             <ImageView
+                                                android:tag="3"
+                                                android:onClick="widgetSelector"
                                                 android:layout_width="200dp"
                                                 android:layout_height="100dp"
                                                 android:layout_gravity="center"
@@ -270,6 +272,8 @@
                                             >
 
                                             <ImageView
+                                                android:tag="6"
+                                                android:onClick="widgetSelector"
                                                 android:layout_width="200dp"
                                                 android:layout_height="100dp"
                                                 android:layout_gravity="center"
@@ -292,6 +296,8 @@
 
 
                                         <ImageView
+                                            android:tag="3"
+                                            android:onClick="widgetSelector"
                                             android:layout_width="200dp"
                                             android:layout_height="100dp"
                                             android:layout_gravity="center"
@@ -341,6 +347,8 @@
                                             app:cardElevation="50dp">
 
                                             <ImageView
+                                                android:tag="5"
+                                                android:onClick="widgetSelector"
                                                 android:layout_width="200dp"
                                                 android:layout_height="100dp"
                                                 android:layout_gravity="center"
@@ -395,6 +403,8 @@
                                             >
 
                                             <ImageView
+                                                android:tag="4"
+                                                android:onClick="widgetSelector"
                                                 android:layout_width="200dp"
                                                 android:layout_height="100dp"
                                                 android:layout_gravity="center"
@@ -459,6 +469,8 @@
                                             app:cardElevation="50dp">
 
                                             <ImageView
+                                                android:tag="1"
+                                                android:onClick="widgetSelector"
                                                 android:layout_width="200dp"
                                                 android:layout_height="100dp"
                                                 android:layout_gravity="center"
@@ -515,6 +527,8 @@
                                             >
 
                                             <ImageView
+                                                android:tag="7"
+                                                android:onClick="widgetSelector"
                                                 android:layout_width="100dp"
                                                 android:layout_height="75dp"
                                                 android:layout_gravity="center"
@@ -579,6 +593,8 @@
                                             app:cardElevation="50dp">
 
                                             <ImageView
+                                                android:tag="2"
+                                                android:onClick="widgetSelector"
                                                 android:layout_width="200dp"
                                                 android:layout_height="100dp"
                                                 android:layout_gravity="center"

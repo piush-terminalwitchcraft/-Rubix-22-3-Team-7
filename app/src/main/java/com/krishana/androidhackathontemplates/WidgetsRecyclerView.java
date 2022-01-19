@@ -55,6 +55,9 @@ public class WidgetsRecyclerView extends AppCompatActivity {
             case 6:query = FirebaseFirestore.getInstance()
                 .collection("yash")
                 .orderBy("expiryDate", Query.Direction.ASCENDING).whereEqualTo("category","vegetables");break;
+            case 7:query = FirebaseFirestore.getInstance()
+                    .collection("yash")
+                    .orderBy("expiryDate", Query.Direction.ASCENDING).whereEqualTo("category","packagedFood");break;
         }
 
         FirestoreRecyclerOptions<RecyclerViewData> options = new FirestoreRecyclerOptions.Builder<RecyclerViewData>()

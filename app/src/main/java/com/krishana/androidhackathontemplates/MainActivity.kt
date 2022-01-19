@@ -65,6 +65,11 @@ class MainActivity : AppCompatActivity(){
             true
         }
 
+        //search tab---> sends to search activity
+        val editTextTextPersonName = findViewById<EditText>(R.id.editTextTextPersonName)
+        editTextTextPersonName.setOnClickListener { startActivity(Intent(this,SearchActivity::class.java)) }
+
+        // button for adding items and storing it in firebase
         val addButton = findViewById<FloatingActionButton>(R.id.add_items)
         addButton.setOnClickListener { startActivity(Intent(this,FireBaseActivity::class.java)) }
 
@@ -139,7 +144,7 @@ class MainActivity : AppCompatActivity(){
 
 
         val stringRequest = StringRequest(
-            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey=841251d5281a42c28fe0076a39691cc3&ingredients="+ "carrot",
+            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey=51bfc3b732924f47994f8cd48dd184a1&ingredients="+ "carrot",
             { response ->
 
                 try {
@@ -149,7 +154,8 @@ class MainActivity : AppCompatActivity(){
                         val o = jsonArray.getJSONObject(i)
                         val item = recipeModel(
                             o.getString("title"),
-                            o.getString("image")
+                            o.getString("image"),
+                            o.getInt("id")
                         )
                         list.add(item)
                     }
@@ -171,6 +177,22 @@ class MainActivity : AppCompatActivity(){
         }
         val requestQueue = Volley.newRequestQueue(this)
         requestQueue.add(stringRequest)
+
+
+        adapter.setOnItemClickListener(object : recipeAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                val intent = Intent( this@MainActivity , DetailedRecipe::class.java)
+//                val bundle = Bundle()
+//                bundle.putString("title", recipeModel.getTitle())
+//                bundle.putString("image", recipeModel.getImage())
+//                bundle.putInt("id", recipeModel.getId())
+//                intent.putExtras(bundle)
+                intent.putExtra("title",list[position].title)
+                intent.putExtra("image",list[position].image)
+                intent.putExtra("id",list[position].id)
+                startActivity(intent)
+            }
+        })
 
     }
 }

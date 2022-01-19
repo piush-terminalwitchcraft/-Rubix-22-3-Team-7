@@ -35,17 +35,19 @@ import com.android.volley.toolbox.Volley
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.*
 import com.krishana.androidhackathontemplates.fragments.HomeFragment
 import com.krishana.androidhackathontemplates.fragments.*
 import org.json.JSONArray
 import org.json.JSONException
 
+
 class MainActivity : AppCompatActivity(){
     var db = FirebaseFirestore.getInstance()
     private lateinit var drawerLayout: DrawerLayout
     //stores firebase data to show on homescreen
-    private lateinit var itemListsdata : ArrayList<String>
+//    private lateinit var itemListsdata : ArrayList<String>
+    var itemListsdata = java.util.ArrayList<String>()
     //
     private lateinit var list : ArrayList<recipeModel>
     private lateinit var adapter : recipeAdapter
@@ -103,15 +105,16 @@ class MainActivity : AppCompatActivity(){
 
         //firebase data retrival
 
-        getFireBaseData()
+//        getFireBaseData()
+
 
     }
 
     public fun getFireBaseData()
     {
-        //firebase data getting function
-        itemListsdata = ArrayList<String>()
-        db.collection("yash")
+//        firebase data getting function
+//        itemListsdata = ArrayList<String>()
+        val arrayList = db.collection("yash")
             .whereLessThan("expiryDate", 4)
             .whereGreaterThan("expiryDate",0)
             .get()
@@ -119,18 +122,17 @@ class MainActivity : AppCompatActivity(){
                 for (document in documents) {
                     document.getString("item")?.let { itemListsdata.add(it) }
                     Log.e("tag", "${document.id} => ${document.data}")
-                    Log.e("tag2",itemListsdata.last())
                 }
             }
             .addOnFailureListener { exception ->
                 Log.e("tag", "Error getting documents: ", exception)
             }
+        Log.e("log",itemListsdata.size.toString())
     }
 
     override fun onPause() {
         super.onPause()
         sliderHandle.removeCallbacks(sliderRun)
-
     }
 
 

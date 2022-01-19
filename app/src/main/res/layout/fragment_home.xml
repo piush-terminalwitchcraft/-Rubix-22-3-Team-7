@@ -54,7 +54,7 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Let's have it "
+            android:text="Let's try today  "
             android:textColor="@color/black"
             android:textSize="28sp"
             android:textStyle="bold"
@@ -348,7 +348,7 @@
                                     android:layout_width="200dp"
                                     android:layout_height="100dp"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/vegetables" />
+                                    android:src="@drawable/leftover" />
 
                                 <TextView
                                     android:layout_width="match_parent"
@@ -417,11 +417,11 @@
                                     android:layout_width="200dp"
                                     android:layout_height="100dp"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/fruit" />
+                                    android:src="@drawable/pasta" />
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="JAVASCRIPT ADVANCE"
+                                    android:text="Packed food"
                                     android:textSize="20dp"
                                     android:gravity="center"
                                     android:textColor="@color/black"
@@ -487,7 +487,7 @@
                                     android:textStyle="bold"
                                     android:fontFamily="sans-serif-condensed-medium"
                                     android:gravity="center"
-                                    android:text="Butter"
+                                    android:text="Dairy "
                                     android:textSize="20dp" />
                             </androidx.cardview.widget.CardView>
 

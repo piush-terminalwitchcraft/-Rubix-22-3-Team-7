@@ -7,7 +7,7 @@
     tools:context=".fragments.HomeFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
 
         <!-- TODO: Update blank fragment layout -->
@@ -92,7 +92,9 @@
             android:background="@drawable/editsccreenbackground"
             android:drawableStart="@drawable/ic_baseline_search_24"
             android:drawablePadding="10dp"
+
             android:hint="Search your favourite recipe "
+            android:inputType="textPersonName"
             android:paddingStart="20dp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="@+id/view"
@@ -249,23 +251,6 @@
                                 android:layout_marginTop="330dp"
                                 android:background="@drawable/dotted_vertical"
                                 android:backgroundTint="@color/black" />
-
-                            <EditText
-                                android:id="@+id/editTextTextPersonName2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name" />
-
-                            <EditText
-                                android:id="@+id/editTextTextPersonName3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="Name" />
-
                         </RelativeLayout>
 
 

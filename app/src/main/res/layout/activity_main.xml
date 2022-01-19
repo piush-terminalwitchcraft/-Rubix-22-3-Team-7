@@ -161,6 +161,7 @@
                         android:drawablePadding="10dp"
                         android:hint="Search your favourite recipe "
                         android:paddingStart="20dp"
+                        android:focusableInTouchMode="false"
                         android:textStyle="italic"
                         app:layout_constraintEnd_toEndOf="@+id/view"
                         app:layout_constraintHorizontal_bias="0.727"

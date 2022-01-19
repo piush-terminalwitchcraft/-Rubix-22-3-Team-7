@@ -1,5 +1,6 @@
 package com.krishana.androidhackathontemplates.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -101,7 +102,8 @@ class HomeFragment : Fragment() {
                         val o = jsonArray.getJSONObject(i)
                         val item = recipeModel(
                             o.getString("title"),
-                            o.getString("image")
+                            o.getString("image"),
+                            o.getInt("id")
                         )
                         list.add(item)
                     }
@@ -123,6 +125,7 @@ class HomeFragment : Fragment() {
         }
         val requestQueue = Volley.newRequestQueue(requireContext())
         requestQueue.add(stringRequest)
+
 
     }
 

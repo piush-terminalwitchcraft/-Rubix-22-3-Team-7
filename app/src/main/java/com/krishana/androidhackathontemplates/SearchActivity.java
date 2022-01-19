@@ -56,7 +56,7 @@ public class SearchActivity extends AppCompatActivity {
             public void onClick(View view) {
                 user_search = search_txt.getText().toString();
                 Log.e("tag",user_search);
-                user_link = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=44299400980a47ffb14faf9e93af2e79&ingredients="+ user_search;
+                user_link = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=51bfc3b732924f47994f8cd48dd184a1&ingredients="+ user_search;
 
                 loadRecyclerViewData();
             }

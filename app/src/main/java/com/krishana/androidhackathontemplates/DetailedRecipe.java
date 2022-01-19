@@ -64,8 +64,8 @@ public class DetailedRecipe extends AppCompatActivity {
         Picasso.get().load(D_image).into(d_recipe_img);
         d_recipe_name.setText(D_title);
 
-        ingredient_url = "https://api.spoonacular.com/recipes/"+D_id+"/ingredientWidget.json?apiKey=44299400980a47ffb14faf9e93af2e79";
-        recipe_url = "https://api.spoonacular.com/recipes/"+D_id+"/analyzedInstructions?apiKey=44299400980a47ffb14faf9e93af2e79";
+        ingredient_url = "https://api.spoonacular.com/recipes/"+D_id+"/ingredientWidget.json?apiKey=51bfc3b732924f47994f8cd48dd184a1";
+        recipe_url = "https://api.spoonacular.com/recipes/"+D_id+"/analyzedInstructions?apiKey=51bfc3b732924f47994f8cd48dd184a1";
 
 
         loadRecyclerView();

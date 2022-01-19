@@ -40,6 +40,8 @@ public class FireBaseActivity extends AppCompatActivity implements DatePickerDia
     String expiry;
     long send;
     AutoCompleteTextView editTextCategory;
+    String[] days = new String[]{"meat","fruits","dairy","leftovers","drinks","vegetables","packaged food"};
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +49,7 @@ public class FireBaseActivity extends AppCompatActivity implements DatePickerDia
         setContentView(R.layout.adding_page);
 
         editTextCategory = findViewById(R.id.editTextCategory);
-        String[] days = new String[]{"meat","fruits","dairy","leftovers","drinks","vegetables"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,R.layout.dropdown,days);
+        adapter = new ArrayAdapter<>(this,R.layout.dropdown,days);
         editTextCategory.setAdapter(adapter);
 
 
@@ -77,6 +78,8 @@ public class FireBaseActivity extends AppCompatActivity implements DatePickerDia
                 foodItem.setHint("food item");
                 expiryDate.setText("16/04/2022");
                 editTextCategory.setText("Select Category");
+                adapter = new ArrayAdapter<>(FireBaseActivity.this,R.layout.dropdown,days);
+                editTextCategory.setAdapter(adapter);
             }
         });
 

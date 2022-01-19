@@ -40,7 +40,7 @@ public class FireBaseActivity extends AppCompatActivity implements DatePickerDia
     String expiry;
     long send;
     AutoCompleteTextView editTextCategory;
-    String[] days = new String[]{"meat","fruits","dairy","leftovers","drinks","vegetables","packaged food"};
+    String[] days = new String[]{"meat","fruit","dairy","leftovers","drinks","vegetables","packaged food"};
     ArrayAdapter<String> adapter;
 
     @Override

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -19,9 +21,11 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -30,22 +34,30 @@ import java.util.concurrent.TimeUnit;
 
 public class FireBaseActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    EditText foodItem,editTextCategory;
+    EditText foodItem;
     TextView expiryDate;
-    Button btn ;
+    Button textViewSave;
     String expiry;
     long send;
+    AutoCompleteTextView editTextCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fire_base);
+        setContentView(R.layout.adding_page);
+
+        editTextCategory = findViewById(R.id.editTextCategory);
+        String[] days = new String[]{"meat","fruits","dairy","leftovers","drinks","vegetables"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,R.layout.dropdown,days);
+        editTextCategory.setAdapter(adapter);
 
 
         foodItem = findViewById(R.id.foodItem);
         expiryDate = findViewById(R.id.expiryDate);
-        btn = findViewById(R.id.button);
+        textViewSave = findViewById(R.id.textView_save);
         editTextCategory = findViewById(R.id.editTextCategory);
+        foodItem.setHint("food item");
+        expiryDate.setText("16/04/2022");
 
 
         expiryDate.setOnClickListener(new View.OnClickListener() {
@@ -55,15 +67,16 @@ public class FireBaseActivity extends AppCompatActivity implements DatePickerDia
             }
         });
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        textViewSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String food = foodItem.getText().toString();
                 String category = editTextCategory.getText().toString();
                 uploadData(food,send,category);
                 foodItem.getText().clear();
-                expiryDate.setText("Date");
-                editTextCategory.getText().clear();
+                foodItem.setHint("food item");
+                expiryDate.setText("16/04/2022");
+                editTextCategory.setText("Select Category");
             }
         });
 

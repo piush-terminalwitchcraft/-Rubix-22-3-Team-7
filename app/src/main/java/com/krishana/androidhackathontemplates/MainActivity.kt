@@ -7,6 +7,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
@@ -34,15 +35,18 @@ import com.android.volley.toolbox.Volley
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.firestore.FirebaseFirestore
 import com.krishana.androidhackathontemplates.fragments.HomeFragment
 import com.krishana.androidhackathontemplates.fragments.*
 import org.json.JSONArray
 import org.json.JSONException
 
 class MainActivity : AppCompatActivity(){
-
+    var db = FirebaseFirestore.getInstance()
     private lateinit var drawerLayout: DrawerLayout
-
+    //stores firebase data to show on homescreen
+    private lateinit var itemListsdata : ArrayList<String>
+    //
     private lateinit var list : ArrayList<recipeModel>
     private lateinit var adapter : recipeAdapter
     private lateinit var viewPagerImgSlider: ViewPager2
@@ -96,8 +100,32 @@ class MainActivity : AppCompatActivity(){
 //            a.visibility = View.INVISIBLE
 //
 //        }
+
+        //firebase data retrival
+
+        getFireBaseData()
+
     }
 
+    public fun getFireBaseData()
+    {
+        //firebase data getting function
+        itemListsdata = ArrayList<String>()
+        db.collection("yash")
+            .whereLessThan("expiryDate", 4)
+            .whereGreaterThan("expiryDate",0)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    document.getString("item")?.let { itemListsdata.add(it) }
+                    Log.e("tag", "${document.id} => ${document.data}")
+                    Log.e("tag2",itemListsdata.last())
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.e("tag", "Error getting documents: ", exception)
+            }
+    }
 
     override fun onPause() {
         super.onPause()

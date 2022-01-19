@@ -26,7 +26,6 @@
         android:id="@+id/expiryDate"
         android:layout_width="166dp"
         android:layout_height="46dp"
-        android:layout_marginTop="436dp"
         android:layout_marginBottom="250dp"
         android:text="date"
         android:textSize="20sp"
@@ -35,8 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.722" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextCategory" />
 
     <Button
         android:id="@+id/button"

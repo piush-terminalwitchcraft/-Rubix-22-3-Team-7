@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,8 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 public class RecyclerViewAdapter extends FirestoreRecyclerAdapter<RecyclerViewData,RecyclerViewAdapter.MyViewHolder>{
+    private onItemclicklistener listener;
 
     public void deleteData(int position)
     {
@@ -79,8 +82,26 @@ public class RecyclerViewAdapter extends FirestoreRecyclerAdapter<RecyclerViewDa
             itemTextView = itemView.findViewById(R.id.item);
             expirtDateTextView = itemView.findViewById(R.id.expiryDateTextView);
             categoryTextView = itemView.findViewById(R.id.editTextCategory);
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position =  getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION && listener != null) {
+                        listener.onItemclick(getSnapshots().getSnapshot(position), position);
+                    }
+                }
+            });
         }
 
+    }
+    public interface onItemclicklistener{
+        void onItemclick(DocumentSnapshot documentSnapshot , int position);
+        public  void setonItemclicklistener(onItemclicklistener listener);
+    }
+    public void setOnItemClickListener(onItemclicklistener listener) {
+        this.listener = listener;
     }
 
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android Hackathon Templates</string>
+    <string name="app_name">Fridgely</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="subgroups_fridge_items">
         <item>Meat </item>

@@ -15,6 +15,7 @@ import com.squareup.okhttp.Dispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
@@ -39,6 +40,8 @@ class LogInActivity : AppCompatActivity() {
 
         loginButton.setOnClickListener{
             loginuser()
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
 
         }
         signuptextview.setOnClickListener {

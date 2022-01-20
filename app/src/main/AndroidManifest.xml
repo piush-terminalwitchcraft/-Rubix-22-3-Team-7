@@ -31,9 +31,7 @@
         <activity
             android:name=".WidgetTestActivity"
             android:exported="true"/>
-        <activity
-            android:name=".LogInActivity"
-            android:exported="false" />
+
         <activity
             android:name=".SignOutActivity"
             android:exported="false" />
@@ -42,7 +40,10 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"/>
+            <activity
+                android:name=".LogInActivity"
+                android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

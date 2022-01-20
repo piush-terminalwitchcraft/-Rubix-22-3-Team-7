@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +32,7 @@ public class DetailedRecipe extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<IngredientModel> IngredientList;
-
+    private ImageView share;
     private RecyclerView recyclerView1;
     private RecyclerView.Adapter adapter1;
     private List<RecipeModel1> RecipeList;
@@ -47,6 +49,18 @@ public class DetailedRecipe extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         IngredientList = new ArrayList<>();
+        share = findViewById(R.id.imageview_share);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "\n Thanks for using Fridgely Android app for more recipes Download on playstore \n\n Have a nice day !!");
+                sendIntent.setType("text/plain");
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                startActivity(shareIntent);
+            }
+        });
 
         recyclerView1 = (RecyclerView) findViewById(R.id.rc3);
         recyclerView1.setHasFixedSize(true);

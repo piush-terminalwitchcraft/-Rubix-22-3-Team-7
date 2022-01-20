@@ -18,6 +18,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -102,6 +103,19 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 Toast.makeText(RecyclerViewActivity.this, "Item Deleted!!", Toast.LENGTH_SHORT).show();
             }
         }).attachToRecyclerView(recyclerView);
+
+       recyclerViewAdapter.setOnItemClickListener(new RecyclerViewAdapter.onItemclicklistener() {
+           @Override
+           public void onItemclick(DocumentSnapshot documentSnapshot, int position) {
+
+           }
+
+           @Override
+           public void setonItemclicklistener(RecyclerViewAdapter.onItemclicklistener listener) {
+
+           }
+       });
+
 
     }
 

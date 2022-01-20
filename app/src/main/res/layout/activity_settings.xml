@@ -110,7 +110,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="github_profile_optional"
+                android:hint="Instagram Username"
                 android:textColorHint="@color/black"
                 app:boxStrokeColor="@color/black"
                 app:boxStrokeWidthFocused="2dp"
@@ -156,7 +156,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="#F6BC0E"
+                android:backgroundTint="@color/primary"
                 android:elevation="5dp"
 
                 android:text="Register"
@@ -171,7 +171,7 @@
                 android:fontFamily="@font/muli_light"
                 android:padding="5dp"
                 android:text="Already have account? Login"
-                android:textColor="#E48D0C"
+                android:textColor="@color/primarydark"
                 android:textSize="16sp" />
 
         </LinearLayout>

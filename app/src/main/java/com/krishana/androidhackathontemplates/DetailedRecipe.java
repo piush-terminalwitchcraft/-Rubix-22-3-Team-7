@@ -29,6 +29,8 @@ import java.util.List;
 
 public class DetailedRecipe extends AppCompatActivity {
 
+    TextView d_recipe_name;
+
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<IngredientModel> IngredientList;
@@ -78,12 +80,30 @@ public class DetailedRecipe extends AppCompatActivity {
         Picasso.get().load(D_image).into(d_recipe_img);
         d_recipe_name.setText(D_title);
 
-        ingredient_url = "https://api.spoonacular.com/recipes/"+D_id+"/ingredientWidget.json?apiKey=f52a16c386a8431b8158cee6f63ac4a6";
-        recipe_url = "https://api.spoonacular.com/recipes/"+D_id+"/analyzedInstructions?apiKey=f52a16c386a8431b8158cee6f63ac4a6";
+
+
+        ingredient_url = "https://api.spoonacular.com/recipes/"+D_id+"/ingredientWidget.json?apiKey=" + getResources().getString(R.string.API_KEY_SPOONACULAR);
+        recipe_url = "https://api.spoonacular.com/recipes/"+D_id+"/analyzedInstructions?apiKey=" + getResources().getString(R.string.API_KEY_SPOONACULAR);
+
 
 
         loadRecyclerView();
         loadRecyclerView1();
+
+
+        d_recipe_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailedRecipe.this , Nutrition.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("recipeName", D_title);
+                bundle.putString("image", D_image);
+                bundle.putInt("id", D_id);
+
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 
     private void loadRecyclerView() {

@@ -63,6 +63,8 @@ class MainActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        viewPagerImgSlider = findViewById(R.id.viewPagerImgSlider)
+
 
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation_view)
         bottomNavigationView.selectedItemId = R.id.nav_home
@@ -77,6 +79,7 @@ class MainActivity : AppCompatActivity(){
             }
             true
         }
+        loadrecyclerviewData()
 
         //search tab---> sends to search activity
         val editTextTextPersonName = findViewById<EditText>(R.id.editTextTextPersonName)
@@ -90,7 +93,7 @@ class MainActivity : AppCompatActivity(){
             )
         }
 
-            startActivity(Intent(this,SearchActivity::class.java)) }
+
 
 
         // button for adding items and storing it in firebase
@@ -109,10 +112,9 @@ class MainActivity : AppCompatActivity(){
             startActivity(Intent(this, destinationActivity))
             overridePendingTransition(0, 0)
             true
-        }
 
 
-        viewPagerImgSlider = findViewById(R.id.viewPagerImgSlider)
+
 
 
 //        val abcd = findViewById<EditText>(R.id.editTextTextPersonName)
@@ -122,7 +124,7 @@ class MainActivity : AppCompatActivity(){
 //
 //        }
 
-        loadrecyclerviewData()
+
 
 
 
@@ -135,25 +137,25 @@ class MainActivity : AppCompatActivity(){
 
     }
 
-    public fun getFireBaseData()
-    {
-//        firebase data getting function
-//        itemListsdata = ArrayList<String>()
-        val arrayList = db.collection("yash")
-            .whereLessThan("expiryDate", 4)
-            .whereGreaterThan("expiryDate",0)
-            .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    document.getString("item")?.let { itemListsdata.add(it) }
-                    Log.e("tag", "${document.id} => ${document.data}")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.e("tag", "Error getting documents: ", exception)
-            }
-        Log.e("log",itemListsdata.size.toString())
-    }
+//    public fun getFireBaseData()
+//    {
+////        firebase data getting function
+////        itemListsdata = ArrayList<String>()
+//        val arrayList = db.collection("yash")
+//            .whereLessThan("expiryDate", 4)
+//            .whereGreaterThan("expiryDate",0)
+//            .get()
+//            .addOnSuccessListener { documents ->
+//                for (document in documents) {
+//                    document.getString("item")?.let { itemListsdata.add(it) }
+//                    Log.e("tag", "${document.id} => ${document.data}")
+//                }
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.e("tag", "Error getting documents: ", exception)
+//            }
+//        Log.e("log",itemListsdata.size.toString())
+//    }
 
     override fun onPause() {
         super.onPause()

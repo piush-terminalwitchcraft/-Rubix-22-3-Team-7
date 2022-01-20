@@ -16,9 +16,6 @@
             android:exported="false" />
         <activity
             android:name=".Nutrition"
-
-            android:name=".FireBaseActivity"
-
             android:exported="false" />
         <activity
             android:name=".DetailedRecipe"
@@ -41,6 +38,8 @@
         <activity
             android:name=".LogInActivity"
             android:exported="false" />
+        <activity android:name=".FireBaseActivity"
+            android:exported="false"/>
         <activity
             android:name=".SignOutActivity"
             android:exported="false" />

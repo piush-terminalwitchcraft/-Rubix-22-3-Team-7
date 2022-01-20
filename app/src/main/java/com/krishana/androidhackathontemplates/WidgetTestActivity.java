@@ -26,7 +26,7 @@ public class WidgetTestActivity extends AppCompatActivity {
 }
 
 
-    }
-}
+
+
 
 

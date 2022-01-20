@@ -177,7 +177,7 @@ class MainActivity : AppCompatActivity(){
 
 
         val stringRequest = StringRequest(
-            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey=f52a16c386a8431b8158cee6f63ac4a6&ingredients="+ "carrot",
+            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey="+ resources.getString(R.string.API_KEY_SPOONACULAR) +"&ingredients="+ "carrot",
             { response ->
 
                 try {

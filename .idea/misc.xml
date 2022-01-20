@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
         <entry key="..\:/Users/Abhinay/Desktop/-Rubix-22-3-Team-7/app/src/main/res/drawable/bottoncurved.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Abhinay/Desktop/-Rubix-22-3-Team-7/app/src/main/res/drawable/ctr_bg.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Abhinay/Desktop/-Rubix-22-3-Team-7/app/src/main/res/drawable/curvedbox.xml" value="0.2526041666666667" />
@@ -31,6 +32,39 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_fire_base.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_recycler_view.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/items.xml" value="0.15767634854771784" />
+
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable-v24/circleorange.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable-v24/gradient_top.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable-v24/home_fragment_card_edge.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable-v24/rectangle_constrlayout_small.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/bottom_nav_bg.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/bottom_nav_icon.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/dotted.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/dotted_vertical.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/editsccreenbackground.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/ic_baseline_calendar.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/ic_category.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/ic_gmail.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/drawable/ic_person_vector.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_fire_base.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_log_in.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_recycler_view.xml" value="0.33" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_search.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/activity_widgets_recycler_view.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/adding_page.xml" value="0.5" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/dropdown.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/food_item.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/fragment_favourites.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/fragment_message.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/home_fragment_recipes_story.xml" value="0.25" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/ingredient_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/items.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/krish/StudioProjects/-Rubix-22-3-Team-7/app/src/main/res/layout/nav_header.xml" value="0.16666666666666666" />
+
       </map>
     </option>
   </component>

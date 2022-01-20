@@ -37,6 +37,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation_view);
+        bottomNavigationView.setSelectedItemId(R.id.nav_items);
+        bottomNavigationView.setSelectedItemId(R.id.nav_items);
         bottomNavigationView.setOnItemSelectedListener((NavigationBarView.OnItemSelectedListener)(new NavigationBarView.OnItemSelectedListener() {
             public final boolean onNavigationItemSelected(@NotNull MenuItem it) {
                 Intrinsics.checkNotNullParameter(it, "it");
@@ -52,6 +54,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 Class destinationActivity = var10000;
                 if(it.getItemId()!=R.id.nav_items){
                     RecyclerViewActivity.this.startActivity(new Intent((Context)RecyclerViewActivity.this, destinationActivity));
+                    RecyclerViewActivity.this.overridePendingTransition(0,0);
 
                 }
                 return true;

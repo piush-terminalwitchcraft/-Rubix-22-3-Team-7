@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.krishana.androidhackathontemplates">
 
     <application
@@ -28,6 +29,9 @@
             android:name=".RecyclerViewActivity"
             android:exported="false" />
         <activity
+            android:name=".WidgetTestActivity"
+            android:exported="true"/>
+        <activity
             android:name=".LogInActivity"
             android:exported="false" />
         <activity
@@ -44,6 +48,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name="Pushnotificationservice"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT">
+                </action>
+            </intent-filter>
+        </service>
 
         <meta-data
             android:name="preloaded_fonts"

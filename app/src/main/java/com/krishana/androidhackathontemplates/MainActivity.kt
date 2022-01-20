@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
 
         val bottomNavigationView : BottomNavigationView = findViewById(R.id.bottom_navigation_view)
+        bottomNavigationView.selectedItemId = R.id.nav_home
         bottomNavigationView.setOnItemSelectedListener {
             val destinationActivity  = when(it.itemId){
                 R.id.nav_items -> RecyclerViewActivity::class.java
@@ -73,7 +74,8 @@ class MainActivity : AppCompatActivity(){
 
         //search tab---> sends to search activity
         val editTextTextPersonName = findViewById<EditText>(R.id.editTextTextPersonName)
-        editTextTextPersonName.setOnClickListener { startActivity(Intent(this,SearchActivity::class.java)) }
+        editTextTextPersonName.setOnClickListener {
+            startActivity(Intent(this,SearchActivity::class.java)) }
 
         // button for adding items and storing it in firebase
         val addButton = findViewById<FloatingActionButton>(R.id.add_items)
@@ -89,6 +91,7 @@ class MainActivity : AppCompatActivity(){
                 else -> MainActivity::class.java
             }
             startActivity(Intent(this,destinationActivity))
+            overridePendingTransition(0,0)
             true
         }
 
@@ -174,7 +177,7 @@ class MainActivity : AppCompatActivity(){
 
 
         val stringRequest = StringRequest(
-            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey=51bfc3b732924f47994f8cd48dd184a1&ingredients="+ "carrot",
+            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey=f52a16c386a8431b8158cee6f63ac4a6&ingredients="+ "carrot",
             { response ->
 
                 try {

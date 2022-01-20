@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidHackathonTemplates">
         <activity
+            android:name=".FireBaseActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailedRecipe"
             android:exported="false" />
         <activity
@@ -20,7 +23,7 @@
             android:name=".WidgetsRecyclerView"
             android:exported="false" />
         <activity
-            android:name=".FireBaseActivity"
+            android:name=".to_buy_list"
             android:exported="false" />
         <activity
             android:name=".RecyclerViewActivity"
@@ -42,7 +45,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

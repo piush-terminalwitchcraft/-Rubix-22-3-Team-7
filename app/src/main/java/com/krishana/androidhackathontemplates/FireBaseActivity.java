@@ -10,6 +10,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,14 +41,14 @@ public class FireBaseActivity extends AppCompatActivity implements DatePickerDia
     String expiry;
     long send;
     AutoCompleteTextView editTextCategory;
-    String[] days = new String[]{"meat","fruits","dairy","leftovers","drinks","vegetables","packaged food"};
+    String[] days = new String[]{"meat","fruit","dairy","leftovers","drinks","vegetables","packaged food"};
     ArrayAdapter<String> adapter;
+    ImageView ie ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adding_page);
-
         editTextCategory = findViewById(R.id.editTextCategory);
         adapter = new ArrayAdapter<>(this,R.layout.dropdown,days);
         editTextCategory.setAdapter(adapter);

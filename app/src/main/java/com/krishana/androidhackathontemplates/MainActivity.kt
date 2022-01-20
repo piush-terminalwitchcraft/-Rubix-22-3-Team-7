@@ -67,7 +67,8 @@ class MainActivity : AppCompatActivity(){
 
         //search tab---> sends to search activity
         val editTextTextPersonName = findViewById<EditText>(R.id.editTextTextPersonName)
-        editTextTextPersonName.setOnClickListener { startActivity(Intent(this,SearchActivity::class.java)) }
+        editTextTextPersonName.setOnClickListener {
+            startActivity(Intent(this,SearchActivity::class.java)) }
 
         // button for adding items and storing it in firebase
         val addButton = findViewById<FloatingActionButton>(R.id.add_items)
@@ -144,7 +145,7 @@ class MainActivity : AppCompatActivity(){
 
 
         val stringRequest = StringRequest(
-            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey=51bfc3b732924f47994f8cd48dd184a1&ingredients="+ "carrot",
+            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey=f52a16c386a8431b8158cee6f63ac4a6&ingredients="+ "carrot",
             { response ->
 
                 try {

@@ -19,10 +19,7 @@ Fridgely is a daily assistant app which helps users to organize their food store
 
 ## Features of Fridgely 
 -Unique and secure authentication for storage of data and data retrieval.
-![image](https://user-images.githubusercontent.com/76522725/150279732-1c2f53b6-eab2-4494-a113-a348e00eb732.png)
-
 -Add feature with text recognition for better usability.
-
 -One swipe delete for easy data management.
 -Real time updates of all your fridge items in one place.
 -Timely notifications to engage with users and remind them of their individual duty towards a waste free daily life.

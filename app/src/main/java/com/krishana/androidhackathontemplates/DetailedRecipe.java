@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +28,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DetailedRecipe extends AppCompatActivity {
+
+    TextView d_recipe_name;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -64,12 +68,30 @@ public class DetailedRecipe extends AppCompatActivity {
         Picasso.get().load(D_image).into(d_recipe_img);
         d_recipe_name.setText(D_title);
 
+
+
         ingredient_url = "https://api.spoonacular.com/recipes/"+D_id+"/ingredientWidget.json?apiKey=" + getResources().getString(R.string.API_KEY_SPOONACULAR);
         recipe_url = "https://api.spoonacular.com/recipes/"+D_id+"/analyzedInstructions?apiKey=" + getResources().getString(R.string.API_KEY_SPOONACULAR);
 
 
+
         loadRecyclerView();
         loadRecyclerView1();
+
+
+        d_recipe_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailedRecipe.this , Nutrition.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("recipeName", D_title);
+                bundle.putString("image", D_image);
+                bundle.putInt("id", D_id);
+
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 
     private void loadRecyclerView() {

@@ -43,31 +43,37 @@ import org.json.JSONException
 
 
 class MainActivity : AppCompatActivity(){
-    var db = FirebaseFirestore.getInstance()
+    //var db = FirebaseFirestore.getInstance()
+   // var count:Int?=null
     private lateinit var drawerLayout: DrawerLayout
     //stores firebase data to show on homescreen
+
+    //private lateinit var itemListsdata : ArrayList<String>
+
 //    private lateinit var itemListsdata : ArrayList<String>
     var itemListsdata = java.util.ArrayList<String>()
+
     //
     private lateinit var list : ArrayList<recipeModel>
     private lateinit var adapter : recipeAdapter
     private lateinit var viewPagerImgSlider: ViewPager2
     private lateinit var sliderHandle: Handler
     private lateinit var sliderRun :Runnable
+    //private  var About_to_expire_item:String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val bottomNavigationView : BottomNavigationView = findViewById(R.id.bottom_navigation_view)
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation_view)
         bottomNavigationView.selectedItemId = R.id.nav_home
         bottomNavigationView.setOnItemSelectedListener {
-            val destinationActivity  = when(it.itemId){
+            val destinationActivity = when (it.itemId) {
                 R.id.nav_items -> RecyclerViewActivity::class.java
 
                 else -> MainActivity::class.java
             }
-            if(it.itemId != R.id.nav_home){
-                startActivity(Intent(this,destinationActivity))
+            if (it.itemId != R.id.nav_home) {
+                startActivity(Intent(this, destinationActivity))
             }
             true
         }
@@ -75,29 +81,39 @@ class MainActivity : AppCompatActivity(){
         //search tab---> sends to search activity
         val editTextTextPersonName = findViewById<EditText>(R.id.editTextTextPersonName)
         editTextTextPersonName.setOnClickListener {
+
+            startActivity(
+                Intent(
+                    this,
+                    SearchActivity::class.java
+                )
+            )
+        }
+
             startActivity(Intent(this,SearchActivity::class.java)) }
+
 
         // button for adding items and storing it in firebase
         val addButton = findViewById<FloatingActionButton>(R.id.add_items)
-        addButton.setOnClickListener { startActivity(Intent(this,FireBaseActivity::class.java)) }
+        addButton.setOnClickListener { startActivity(Intent(this, FireBaseActivity::class.java)) }
 
         drawerLayout = findViewById(R.id.drawer_layout)
         val navView = findViewById<NavigationView>(R.id.nav_view)
-        navView.setNavigationItemSelectedListener{
-            val destinationActivity = when(it.itemId) {
+        navView.setNavigationItemSelectedListener {
+            val destinationActivity = when (it.itemId) {
                 R.id.nav_signout -> SignOutActivity::class.java
                 R.id.nav_log_in -> LogInActivity::class.java
                 R.id.nav_settings -> SettingsActivity::class.java
                 else -> MainActivity::class.java
             }
-            startActivity(Intent(this,destinationActivity))
-            overridePendingTransition(0,0)
+            startActivity(Intent(this, destinationActivity))
+            overridePendingTransition(0, 0)
             true
         }
 
 
         viewPagerImgSlider = findViewById(R.id.viewPagerImgSlider)
-        loadrecyclerviewData()
+
 
 //        val abcd = findViewById<EditText>(R.id.editTextTextPersonName)
 //        abcd.setOnClickListener{
@@ -106,7 +122,13 @@ class MainActivity : AppCompatActivity(){
 //
 //        }
 
-        //firebase data retrival
+        loadrecyclerviewData()
+
+
+
+    }
+
+
 
 //        getFireBaseData()
 
@@ -177,7 +199,11 @@ class MainActivity : AppCompatActivity(){
 
 
         val stringRequest = StringRequest(
-            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey="+ resources.getString(R.string.API_KEY_SPOONACULAR) +"&ingredients="+ "carrot",
+
+        
+
+            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey="+ resources.getString(R.string.API_KEY_SPOONACULAR) +"&ingredients="+ "Banana",
+
             { response ->
 
                 try {

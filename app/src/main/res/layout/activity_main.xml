@@ -163,9 +163,9 @@
                         android:paddingStart="20dp"
                         android:focusableInTouchMode="false"
                         android:textStyle="italic"
-                        app:layout_constraintEnd_toEndOf="@+id/view"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.727"
-                        app:layout_constraintStart_toStartOf="@+id/textView4"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/linearlayout" />
 
                     <TextView

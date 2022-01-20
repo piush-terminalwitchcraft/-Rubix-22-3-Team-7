@@ -12,6 +12,7 @@ public class WidgetTestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_widget_test);
+
     }
 
 //    public void widgetSelector(View view)
@@ -23,3 +24,9 @@ public class WidgetTestActivity extends AppCompatActivity {
 //
 //    }
 }
+
+
+    }
+}
+
+

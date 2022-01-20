@@ -35,18 +35,24 @@ import com.android.volley.toolbox.Volley
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.*
 import com.krishana.androidhackathontemplates.fragments.HomeFragment
 import com.krishana.androidhackathontemplates.fragments.*
 import org.json.JSONArray
 import org.json.JSONException
+
 
 class MainActivity : AppCompatActivity(){
     //var db = FirebaseFirestore.getInstance()
    // var count:Int?=null
     private lateinit var drawerLayout: DrawerLayout
     //stores firebase data to show on homescreen
+
     //private lateinit var itemListsdata : ArrayList<String>
+
+//    private lateinit var itemListsdata : ArrayList<String>
+    var itemListsdata = java.util.ArrayList<String>()
+
     //
     private lateinit var list : ArrayList<recipeModel>
     private lateinit var adapter : recipeAdapter
@@ -75,6 +81,7 @@ class MainActivity : AppCompatActivity(){
         //search tab---> sends to search activity
         val editTextTextPersonName = findViewById<EditText>(R.id.editTextTextPersonName)
         editTextTextPersonName.setOnClickListener {
+
             startActivity(
                 Intent(
                     this,
@@ -82,6 +89,9 @@ class MainActivity : AppCompatActivity(){
                 )
             )
         }
+
+            startActivity(Intent(this,SearchActivity::class.java)) }
+
 
         // button for adding items and storing it in firebase
         val addButton = findViewById<FloatingActionButton>(R.id.add_items)
@@ -115,14 +125,39 @@ class MainActivity : AppCompatActivity(){
         loadrecyclerviewData()
 
 
+
     }
 
 
 
+//        getFireBaseData()
+
+
+    }
+
+    public fun getFireBaseData()
+    {
+//        firebase data getting function
+//        itemListsdata = ArrayList<String>()
+        val arrayList = db.collection("yash")
+            .whereLessThan("expiryDate", 4)
+            .whereGreaterThan("expiryDate",0)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    document.getString("item")?.let { itemListsdata.add(it) }
+                    Log.e("tag", "${document.id} => ${document.data}")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.e("tag", "Error getting documents: ", exception)
+            }
+        Log.e("log",itemListsdata.size.toString())
+    }
+
     override fun onPause() {
         super.onPause()
         sliderHandle.removeCallbacks(sliderRun)
-
     }
 
 
@@ -164,7 +199,11 @@ class MainActivity : AppCompatActivity(){
 
 
         val stringRequest = StringRequest(
-            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey=2160045176fd44bd8d1d2006cd995892&ingredients=banana" ,
+
+        
+
+            Request.Method.GET, "https://api.spoonacular.com/recipes/findByIngredients?apiKey="+ resources.getString(R.string.API_KEY_SPOONACULAR) +"&ingredients="+ "Banana",
+
             { response ->
 
                 try {

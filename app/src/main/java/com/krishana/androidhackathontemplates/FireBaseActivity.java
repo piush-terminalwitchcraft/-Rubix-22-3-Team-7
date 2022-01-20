@@ -1,6 +1,9 @@
 package com.krishana.androidhackathontemplates;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,16 +13,22 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.lang.reflect.Array;
 import java.text.ParseException;
@@ -42,12 +51,12 @@ public class FireBaseActivity extends AppCompatActivity implements DatePickerDia
     AutoCompleteTextView editTextCategory;
     String[] days = new String[]{"meat","fruit","dairy","leftovers","drinks","vegetables","packaged food"};
     ArrayAdapter<String> adapter;
+    ImageView ie ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adding_page);
-
         editTextCategory = findViewById(R.id.editTextCategory);
         adapter = new ArrayAdapter<>(this,R.layout.dropdown,days);
         editTextCategory.setAdapter(adapter);
@@ -106,20 +115,50 @@ public class FireBaseActivity extends AppCompatActivity implements DatePickerDia
         item.put("category",category);
 
         db.collection("yash")
-                .add(item)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                .whereEqualTo("item", food)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d("tag", "DocumentSnapshot added with ID: " + documentReference.getId());
-                        Toast.makeText(FireBaseActivity.this, "Item Uploaded!!", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("tag", "Error adding document", e);
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            int count=0;
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if(document.getString("item").equals(food)){
+                                    count++;
+                                    if(count>1) {
+//                                        Toast.makeText(FireBaseActivity.this, "Finish the food item first you fatty!!", Toast.LENGTH_SHORT).show();
+                                        sameItemDialogue();
+                                        break;
+                                    }
+                                }
+                                Log.e("querry ", document.getId() + " => " + document.getData());
+                            }
+
+                            Toast.makeText(FireBaseActivity.this, "Item Uploaded!!", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            Log.e("querry failed", "Error getting documents: ", task.getException());
+                        }
                     }
                 });
+
+
+
+            db.collection("yash")
+                    .add(item)
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Log.d("tag", "DocumentSnapshot added with ID: " + documentReference.getId());
+//                        Toast.makeText(FireBaseActivity.this, "Item Uploaded!!", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w("tag", "Error adding document", e);
+                        }
+                    });
     }
 
 
@@ -150,4 +189,22 @@ public class FireBaseActivity extends AppCompatActivity implements DatePickerDia
         super.onBackPressed();
 
     }
+
+    public void sameItemDialogue()
+    {
+        final AlertDialog.Builder alert = new AlertDialog.Builder(FireBaseActivity.this);
+        View mView = getLayoutInflater().inflate(R.layout.overeat_dialogue_box,null);
+        Button btn_okay = (Button)mView.findViewById(R.id.btn_okay);
+        alert.setView(mView);
+        final AlertDialog alertDialog = alert.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        btn_okay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+        alertDialog.show();
+    }
+
 }
